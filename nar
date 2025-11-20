@@ -1,0 +1,168 @@
+                                                      ****Docker****
+*Create folder: my_web_server.
+*Create 2 file: 1. Touch index.html (write html code)
+                           2. touch Dockerfile (FROM httpd:2.4
+                                                                COPY index.html /usr/local/apache2/htdocs)
+*Run this command of terminal:
+   sudo docker build –t my_web_server .
+*Run this command on terminal:
+   Sudo docker run –p 8096:80 –d my_web_server
+*check output on the browser type:
+    Localhost:8096
+
+
+                                              ****Maven****
+*Crete the folder mvn_demo and open it into terminal and write this command.
+    mvn archetype:generate –DgroupId=com.example –DartifactId=MyApp –DinteractiveMode=false
+
+*Run this command on terminal:
+   cd MyApp
+   tree
+  mvn compile
+after that it forms a error in terminal for solve this in our folder mvn_demo search the POM.XML file and write the above code in it.
+ (1) <version>1.0-SNAPSHOT</version>
+  <properties>
+  <maven.compiler.source>8</maven.compiler.source>
+  <maven.compiler.target>8</maven.compiler.target>
+  </properties>    
+ (2) </dependencies>
+  <build>
+  <plugins>
+  <plugin>
+  <groupId>org.codehaus.mojo</groupId>
+  <artifactId>exec-maven-plugin</artifactId>
+  <version>3.0.0</version>
+  <executions>
+  <execution>
+  <goals>
+  <goal>java</goal>
+  </goals>
+  </execution>
+  </executions>
+  <configuration>
+  <mainClass>com.example.App</mainClass>
+  </configuration>
+  </plugin>
+  </plugins>
+  </build>  
+</project>
+
+  tree
+  mvn compile
+  tree
+  mvn exec:java
+  mvn package
+*After all this commands check in the folder jar file are created.
+
+                                         *****BitBucket******
+*Login to bitbucket:
+Follow this steps in bitbucke:
+Create new Repository
+Give Project name
+Give repository name
+Make Access level private to public 
+Create respository
+Clone & Copy the path
+*Open the terminal via folder and pest the link:
+ git clone https://jamkar2332@bitbucket.org/demo_132/new_repository.git (Sample link)
+cd new_repository
+touch sample.html (create one file)
+git status
+git add sample.html
+git status
+git commit –m “added html”
+git status
+git branch new (Enter the branch name)
+git checkout new
+touch style.css (create second file)
+git add style.css
+git status
+git commit –m “added css”
+git status
+git push origin new
+*Go to bitbucket in your work click on recent repository:
+Go to settings
+Personal bitbucket seetings
+App password
+Go to API tokens
+Pest the verification code
+Create token with scope
+git name
+bitbucket
+Tick all the checkboxes ans select read, write and delete scope actions.
+& click on NEXT button
+Create token
+Copy the token
+*Go to the terminal:
+git checkout main
+git status
+git push origin main
+& here it ask for the password (password : https://jamkar2332@bitbucket.org) so pest the link here.
+*Go to the bitbucket:
+Go to your work
+Pull request
+Create pull request
+Create pull request
+Merge
+Check the both files are added in main and new
+
+         *********Jenkins*******
+Sudo systemctl status Jenkins    (to check the status of Jenkins)
+1)	 Var/www/html/sudo mkdir <  project name >
+2)	Ngrok http 8080
+3)	Forwarding link -  signin
+4)	Welcome to Jenkins 
+5)	New item->  enter name -> freestyle ok
+6)	General -> source code management -> git -> repo url -> branch specifier ( main/master)
+7)	Github hook trigger for gitscm pooling 
+8)	Apply save 
+***github settings –> webhooks -> add webhook
+Payload url https:/ .ngrok-free.app  (as forwarding link) -> github webhook
+Ssl verification enable -> events -> send me everything  -> click add / create webhook
+Build now -> look for green tick  
+***Workspace -> look for git repo files add changes in your github files commit changes and look for new green tick in Jenkins
+***  configure -> build environment ->
+Add build step
+Execute shell
+Sudo chown -R Jenkins/var/www/html/project_name           
+ apply save
+Build now
+***********GitLab*********
+1)	Go to gitlab.com
+2)	Sign up 
+3)	Create a new project
+4)	Click on login
+5)	Click + icon  in the top right corner and select new project
+6)	Enter project name, description, and public click create project
+7)	Go to github account click on code
+8)	Copy httpurl and open terminal 
+9)	Type command – git clone “url”
+10)	Add username
+11)	Add password using ->go to edit profile 
+12)	Access token name -> tick all boxes - >
+13)	create token -your token copy it paste it in password and then enter
+14)	 go to project folder  and open terminal from there 
+15)	Type command touch index.html
+16)	Open file anmd add content and save it 
+17)	Git commit -m “added html”
+18)	Git push origin main
+19)	Then add username as gitlab account profile name
+20)	Password -enter token 
+21)	Refresh project
+22)	Git branch new -> git checkout new  
+23)	Touch style.css add code and save it
+24)	Git add
+25)	Git commit -m” addedcss”
+26)	Pig push origin main
+27)	Username – profile name
+28)	Pass- token 
+29)	Create merge req add desc create it 
+30)	After add style in main then used command 
+31)	Git pull origin main
+32)	Username- profile name
+33)	Password-token
+
+
+
+
+
